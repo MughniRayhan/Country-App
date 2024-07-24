@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Countries from './Componenets/Countries';
 
 const url = "https://restcountries.com/v3.1/all"
 
@@ -24,7 +25,7 @@ function App() {
     setLoading(false);
     setError(error);
    }
-   console.log(countries);
+
   } ;
 
   //using useEffect for data fetch
@@ -33,7 +34,12 @@ function App() {
   }, [])
 
   return (
-    <div>App</div>
+    <div>
+      <h1>Country App</h1>
+      {isLoading && <h2>Loading...</h2>}
+      {error && <h2>{error.message}</h2>}
+      {countries && <Countries countries={countries}/>}
+    </div>
   )
 }
 
