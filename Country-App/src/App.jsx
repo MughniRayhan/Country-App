@@ -1,11 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const url = "https://restcountries.com/v3.1/all"
+
 function App() {
 
-  const [isLoading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [countries, setCountries] = useState([])
+  //useState Variables
+  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [countries, setCountries] = useState([]);
+
+  //fetch data
+  const fetchData = async (url) => {
+    setLoading(true);
+   try{
+    const response = await fetch(url);
+    const data = await response.json();
+    
+    setCountries(data);
+    setLoading(false);
+    setError(null);
+    
+   }catch(error){
+    setLoading(false);
+    setError(error);
+   }
+   console.log(countries);
+  } ;
+
+  //using useEffect for data fetch
+  useEffect(()=>{
+    fetchData(url)
+  }, [])
 
   return (
     <div>App</div>
