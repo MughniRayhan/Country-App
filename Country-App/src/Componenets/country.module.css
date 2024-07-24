@@ -1,0 +1,31 @@
+.country {
+  background: #34495e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  transition: all 0.3s;
+}
+
+.country:hover {
+  transform: scale(1.1);
+}
+
+.flag {
+  width: 10rem;
+  height: 7rem;
+}
+.btn {
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  background: orange;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: red;
+  color: white;
+}
