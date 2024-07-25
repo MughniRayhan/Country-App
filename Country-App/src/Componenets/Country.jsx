@@ -5,6 +5,10 @@ import style from './country.module.css'
 function Country(props) {
     const {country} = props;
     const {name, flags, capital, population, area} = country;
+
+    const handleRemove = (name) => {
+          props.onRemoveCountry(name);
+    }
   return (
     <article className={style.country}>
         <div>
@@ -13,6 +17,12 @@ function Country(props) {
             <h3>Population: {population} </h3>
             <h3>Capital: {capital} </h3>
             <h3>Area: {area} </h3>
+
+            <button className={style.btn} onClick={() => {
+              handleRemove(name.common)
+            }}>
+                Remove Country
+            </button>
         </div>
     </article>
   )

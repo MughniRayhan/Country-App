@@ -22,10 +22,10 @@
   padding: 0.6rem;
   cursor: pointer;
   background: orange;
+  color: white;
   transition: all 0.3s;
 }
 
 .btn:hover {
   background: red;
-  color: white;
 }
